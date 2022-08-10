@@ -1,0 +1,23 @@
+@import "./references";
+
+.section {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: $color-primary;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  margin: 0 auto;
+  max-width: 75rem;
+  width: auto;
+
+  @media screen and (max-width: $breakpoint-md) {
+    max-width: 60rem;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    max-width: 20rem;
+  }
+}
+
+.div {
+  margin-top: 20rem;
+}
