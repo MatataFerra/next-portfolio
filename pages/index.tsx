@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { HomeLayout } from "../components/layouts";
-import Image from "next/image";
-import { Navbar } from "../components/navbar";
+import { Navbar, SideBar } from "../components";
 import styles from "../styles/home.module.scss";
 
 const Home: NextPage = () => {
@@ -9,7 +8,9 @@ const Home: NextPage = () => {
     <HomeLayout>
       <section className={styles.section}>
         <Navbar />
-        <div className={styles.div}>Lorem</div>
+        <div className={styles.hero}>
+          <SideBar />
+        </div>
       </section>
     </HomeLayout>
   );

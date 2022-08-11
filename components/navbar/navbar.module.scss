@@ -1,3 +1,5 @@
+@import "../../styles/references";
+
 .navbar {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -6,23 +8,44 @@
 
 .section {
   &-1 {
-    margin-right: 1rem;
+    margin-right: 3rem;
   }
 
   &-2 {
     display: flex;
     justify-content: space-between;
-
-    ul {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      margin: 0;
-    }
+    align-items: center;
   }
 }
 
 .article {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 7rem;
+}
+
+.contact {
+  @include transformOnHover($color-red);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 500;
+}
+
+.email {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  li {
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    @include transformOnHover($color-red);
+  }
 }

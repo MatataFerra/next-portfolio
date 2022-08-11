@@ -6,6 +6,9 @@
 $color-primary: #fff;
 $color-secondary: #eeeeee;
 
+//Color red
+$color-red: #ec5354;
+
 // Breakpoints
 $breakpoint-xs: 320px;
 $breakpoint-sm: 576px;
@@ -17,3 +20,13 @@ $breakpoint-xxl: 1400px;
 //------------------------------
 //---- Mixins ------------------
 //------------------------------
+
+@mixin transformOnHover($color) {
+  transition: all 0.2s;
+  &:hover {
+    background-color: $color;
+    color: #f2f0ee;
+    box-shadow: 0 1rem 2rem rgb(43 41 41 / 40%);
+    transform: rotate(-5deg) scale(1.1);
+  }
+}

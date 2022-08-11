@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { FC } from "react";
-import { Navbar } from "../navbar";
 import { Children } from "../../interface";
+import styles from "./homelayout.module.scss";
 
 export const HomeLayout: FC<Children> = ({ children }) => {
   return (
@@ -14,7 +14,7 @@ export const HomeLayout: FC<Children> = ({ children }) => {
         {/* {imageFullUrl && <meta name="og:image" content={imageFullUrl} />} */}
       </Head>
 
-      <main style={{ padding: "4rem 0" }}>{children}</main>
+      <main className={styles.main}>{children}</main>
     </>
   );
 };

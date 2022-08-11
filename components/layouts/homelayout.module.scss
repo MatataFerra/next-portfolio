@@ -1,0 +1,9 @@
+@import "../../styles/references";
+
+.main {
+  padding: 4rem 0;
+
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 0;
+  }
+}

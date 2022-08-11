@@ -10,14 +10,19 @@
   width: auto;
 
   @media screen and (max-width: $breakpoint-md) {
-    max-width: 60rem;
+    max-width: auto;
+    width: 100vw;
+    margin: 0;
   }
 
-  @media screen and (max-width: $breakpoint-sm) {
-    max-width: 20rem;
-  }
+  // @media screen and (max-width: $breakpoint-sm) {
+  //   max-width: 20rem;
+  // }
 }
 
-.div {
-  margin-top: 20rem;
+.hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 2rem;
+  height: 25rem;
 }
