@@ -20,7 +20,6 @@ const useTheme = () => {
         setProperty("--background-color", "#efefef");
         setProperty("--background-color-panel", "#fff");
         setProperty("--font-color", "#222222");
-        setProperty("--icons-hover", "#222222");
         break;
       }
       case "dark": {

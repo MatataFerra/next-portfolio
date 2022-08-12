@@ -1,9 +1,10 @@
 import { FC } from "react";
 import styles from "./title.module.scss";
+import { LetsTalk } from ".";
 
 export const Title: FC = () => {
   return (
-    <div>
+    <div className={styles.div}>
       <h1 className={styles.h1}>
         <span className={styles.letter}>Matías</span>
         <br />
@@ -12,7 +13,11 @@ export const Title: FC = () => {
       <h2 className={styles.h2}>
         Crafting sites from <span className={styles.gradient}> ideas</span>
       </h2>
-      <p className={styles.p}>Desarrollador Frontend viviendo en Argentina (Buenos Aires).</p>
+      <p className={styles.p}>
+        Desarrollador Frontend viviendo en Argentina (Buenos Aires). Con experiencia desarrollando
+        aplicaciones web complejas con las últimas tecnologías
+      </p>
+      <LetsTalk />
     </div>
   );
 };
