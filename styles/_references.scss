@@ -2,11 +2,15 @@
 //---- Variables ---------------
 //------------------------------
 
+$font-color: var(--font-color);
+
 // Colors
 $color-primary: #fff;
 $color-secondary: #eeeeee;
-
-//Color red
+$color-gray: #c4c4c4;
+$color-purple: #8000ff;
+$color-light-purple: #cf59e6;
+$color-light-blue: #6bc5f8;
 $color-red: #ec5354;
 
 // Breakpoints
@@ -25,7 +29,7 @@ $breakpoint-xxl: 1400px;
   transition: all 0.2s;
   &:hover {
     background-color: $color;
-    color: #f2f0ee;
+    color: $color-secondary;
     box-shadow: 0 1rem 2rem rgb(43 41 41 / 40%);
     transform: rotate(-5deg) scale(1.1);
   }

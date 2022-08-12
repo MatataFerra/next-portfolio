@@ -1,23 +1,21 @@
 import { FC, useState } from "react";
 import NextLink from "next/link";
-import Image from "next/image";
-import { EmailIcon, DarkModeIcon, LightModeIcon } from ".";
+import { EmailIcon, DarkModeIcon, LightModeIcon, DarkLogo, LightLogo } from ".";
 import styles from "./navbar.module.scss";
+import { useToggleTheme } from "../../hooks";
 
 export const Navbar: FC = () => {
   const [changeTheme, setChangeTheme] = useState(false);
+  const { theme, toggleTheme } = useToggleTheme();
 
   const onChangeTheme = () => {
     setChangeTheme((prev) => !prev);
+    toggleTheme();
   };
   return (
     <nav className={styles.navbar}>
       <section className={styles["section-1"]}>
-        <NextLink href='/'>
-          <a>
-            <Image width={80} height={20} src='/assets/images/FERRA.svg' alt='Logo Ferra' />
-          </a>
-        </NextLink>
+        {theme === "light" ? <LightLogo /> : <DarkLogo />}
       </section>
 
       <section className={styles["section-2"]}>

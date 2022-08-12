@@ -12,7 +12,7 @@ export const SideBar: FC = () => {
         <a>
           <GitHubIcon
             cssClass={styles.svg}
-            colorFill={colorHover ? "#000" : "#303030"}
+            colorFill={colorHover ? "#272727" : "#303030"}
             setColorHover={setColorHover}
           />
         </a>
@@ -21,7 +21,7 @@ export const SideBar: FC = () => {
         <a>
           <LinkedinIcon
             cssClass={styles.svg}
-            colorFill={colorLinkedinHover ? "#000" : "#303030"}
+            colorFill={colorLinkedinHover ? "#272727" : "#303030"}
             setColorHover={setColorLinkedinHover}
           />
         </a>
