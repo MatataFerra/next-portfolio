@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "gsap": "^3.10.4",
+    "hamburger-react": "^2.5.0",
     "next": "12.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-modern-drawer": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "18.6.5",

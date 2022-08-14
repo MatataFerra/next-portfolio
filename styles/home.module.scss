@@ -25,4 +25,10 @@
   grid-template-columns: auto 30% 1fr;
   grid-gap: 3rem;
   height: 25rem;
+
+  @media screen and (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+  }
 }

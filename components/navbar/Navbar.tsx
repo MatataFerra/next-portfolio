@@ -1,6 +1,8 @@
 import { FC, useState } from "react";
 import NextLink from "next/link";
-import { EmailIcon, DarkModeIcon, LightModeIcon, DarkLogo, LightLogo } from ".";
+import { EmailIcon, DarkModeIcon, LightModeIcon } from ".";
+import { DarkLogo, LightLogo } from "../logos";
+
 import styles from "./navbar.module.scss";
 import { useToggleTheme } from "../../hooks";
 

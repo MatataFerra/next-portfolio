@@ -1,15 +1,18 @@
 import type { NextPage } from "next";
 import { HomeLayout } from "../components/layouts";
-import { Navbar, SideBar, Title, HeroImage } from "../components";
+import { useDevice } from "../hooks";
+import { Navbar, SideBar, Title, HeroImage, NavbarMobile } from "../components";
 import styles from "../styles/home.module.scss";
 
 const Home: NextPage = () => {
+  const device = useDevice();
+
   return (
     <HomeLayout>
       <section className={styles.section}>
-        <Navbar />
+        {device === "mobile" ? <NavbarMobile /> : <Navbar />}
         <div className={styles.hero}>
-          <SideBar />
+          {device === "desktop" && <SideBar />}
           <Title />
           <HeroImage />
         </div>
