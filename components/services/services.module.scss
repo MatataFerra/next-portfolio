@@ -1,0 +1,142 @@
+@import "../../styles/references";
+
+@mixin SmoothAnimation {
+  transition: all 0.3s ease-in-out;
+  animation: alternate smoothFloating 10s ease-in-out infinite;
+}
+
+.section {
+  height: 100vh;
+}
+
+.trigger {
+  margin: 1rem;
+}
+
+.tween {
+  position: relative;
+  width: 100%;
+}
+
+.screen {
+  position: absolute;
+  top: -5%;
+  left: 0;
+  z-index: 1;
+}
+
+.search {
+  @include SmoothAnimation;
+  position: absolute;
+  top: 0%;
+  right: 11%;
+  z-index: 3;
+}
+
+.banner {
+  @include SmoothAnimation;
+  position: absolute;
+  width: 100%;
+  top: 10%;
+  left: 52%;
+  z-index: 2;
+
+  @media screen and (max-width: $breakpoint-xl) {
+    top: 8%;
+  }
+}
+
+.block {
+  @include SmoothAnimation;
+  position: absolute;
+  width: 100%;
+  top: 22%;
+  left: 52%;
+  z-index: 3;
+
+  @media screen and (max-width: $breakpoint-xl) {
+    top: 15%;
+  }
+}
+
+.line-1 {
+  @include SmoothAnimation;
+  position: absolute;
+  width: 100%;
+  top: 24%;
+  left: 63%;
+  z-index: 3;
+
+  @media screen and (max-width: $breakpoint-xl) {
+    top: 16%;
+  }
+}
+
+.line-2 {
+  @include SmoothAnimation;
+  position: absolute;
+  width: 100%;
+  top: 26.5%;
+  left: 62%;
+  z-index: 3;
+
+  @media screen and (max-width: $breakpoint-xl) {
+    top: 17.5%;
+  }
+}
+
+.line-3 {
+  @include SmoothAnimation;
+  position: absolute;
+  width: 100%;
+  top: 29%;
+  left: 63%;
+  z-index: 3;
+
+  @media screen and (max-width: $breakpoint-xl) {
+    top: 19%;
+  }
+}
+
+.text {
+  width: 35%;
+  text-align: center;
+}
+
+.text-2,
+.text-3 {
+  width: 35%;
+  text-align: center;
+}
+
+@keyframes smoothFloating {
+  0% {
+    transform: translate(-5px, 0);
+  }
+
+  25% {
+    transform: translate(5px, 0);
+  }
+
+  50% {
+    transform: translate(0, 5px);
+  }
+
+  75% {
+    transform: translate(0, -5px);
+  }
+
+  100% {
+    transform: translate(5px, 0);
+  }
+}
+
+@keyframes circularMoves {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

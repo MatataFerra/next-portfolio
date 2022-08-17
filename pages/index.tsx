@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
 import { HomeLayout } from "../components/layouts";
 import { useDevice } from "../hooks";
-import { Navbar, SideBar, Title, HeroImage, NavbarMobile } from "../components";
+import {
+  Navbar,
+  SideBar,
+  Title,
+  HeroImage,
+  NavbarMobile,
+  Services,
+  ServiceScroll,
+} from "../components";
 import styles from "../styles/home.module.scss";
 
 const Home: NextPage = () => {
@@ -15,6 +23,11 @@ const Home: NextPage = () => {
           {device === "desktop" && <SideBar />}
           <Title />
           <HeroImage />
+        </div>
+
+        <div>
+          <Services />
+          {/* <ServiceScroll /> */}
         </div>
       </section>
     </HomeLayout>
