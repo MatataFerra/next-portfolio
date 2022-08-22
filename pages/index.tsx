@@ -1,16 +1,9 @@
 import type { NextPage } from "next";
 import { HomeLayout } from "../components/layouts";
 import { useDevice } from "../hooks";
-import {
-  Navbar,
-  SideBar,
-  Title,
-  HeroImage,
-  NavbarMobile,
-  Services,
-  ServiceScroll,
-} from "../components";
+import { Navbar, SideBar, Title, HeroImage, NavbarMobile, Services } from "../components";
 import styles from "../styles/home.module.scss";
+import trigger from "../components/services/services.module.scss";
 
 const Home: NextPage = () => {
   const device = useDevice();
@@ -24,10 +17,9 @@ const Home: NextPage = () => {
           <Title />
           <HeroImage />
         </div>
-
+        <div className={trigger.trigger} id='trigger'></div>
         <div>
           <Services />
-          {/* <ServiceScroll /> */}
         </div>
       </section>
     </HomeLayout>

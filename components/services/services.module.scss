@@ -10,7 +10,7 @@
 }
 
 .trigger {
-  margin: 1rem;
+  margin: 4rem;
 }
 
 .tween {
@@ -19,9 +19,10 @@
 }
 
 .screen {
+  @include SmoothAnimation;
   position: absolute;
   top: -5%;
-  left: 0;
+  right: 8%;
   z-index: 1;
 }
 
