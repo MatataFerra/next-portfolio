@@ -10,104 +10,92 @@
 }
 
 .trigger {
-  margin: 4rem;
+  margin: 1rem;
 }
 
-.tween {
-  position: relative;
+.section-container {
+  display: flex;
+  gap: 1rem;
+  @media screen and (max-width: $breakpoint-xl) {
+    flex-direction: column;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(20, 4%);
   width: 100%;
+  justify-content: center;
+  align-content: stretch;
+
+  @media screen and (max-width: 1920px) and (min-width: 1380px) {
+    grid-template-rows: repeat(20, 2.5%);
+  }
 }
 
 .screen {
   @include SmoothAnimation;
-  position: absolute;
-  top: -5%;
-  right: 8%;
   z-index: 1;
+  grid-column: 15 / 25;
+  grid-row: 1 / 11;
+  height: min-content;
 }
 
 .search {
   @include SmoothAnimation;
-  position: absolute;
-  top: 0%;
-  right: 11%;
   z-index: 3;
+  grid-column: 22 / 24;
+  grid-row: 2;
+  height: min-content;
 }
 
 .banner {
   @include SmoothAnimation;
-  position: absolute;
-  width: 100%;
-  top: 10%;
-  left: 52%;
   z-index: 2;
-
-  @media screen and (max-width: $breakpoint-xl) {
-    top: 8%;
-  }
+  grid-column: 16 / 24;
+  grid-row: 6 / 6;
+  height: min-content;
 }
 
 .block {
   @include SmoothAnimation;
-  position: absolute;
-  width: 100%;
-  top: 22%;
-  left: 52%;
   z-index: 3;
-
-  @media screen and (max-width: $breakpoint-xl) {
-    top: 15%;
-  }
+  height: min-content;
+  grid-column: 16 / 17;
+  grid-row: 10;
 }
 
 .line-1 {
   @include SmoothAnimation;
-  position: absolute;
-  width: 100%;
-  top: 24%;
-  left: 63%;
   z-index: 3;
-
-  @media screen and (max-width: $breakpoint-xl) {
-    top: 16%;
-  }
+  height: min-content;
+  grid-column: 18 / 19;
+  grid-row: 11 / 12;
 }
 
 .line-2 {
   @include SmoothAnimation;
-  position: absolute;
-  width: 100%;
-  top: 26.5%;
-  left: 62%;
   z-index: 3;
-
-  @media screen and (max-width: $breakpoint-xl) {
-    top: 17.5%;
-  }
+  height: min-content;
+  grid-column: 18 / 19;
+  grid-row: 12;
 }
 
 .line-3 {
   @include SmoothAnimation;
-  position: absolute;
-  width: 100%;
-  top: 29%;
-  left: 63%;
+  height: min-content;
+  grid-column: 17 / 19;
+  grid-row: 13;
   z-index: 3;
-
-  @media screen and (max-width: $breakpoint-xl) {
-    top: 19%;
-  }
 }
 
 .text {
-  width: 35%;
+  width: 100%;
   text-align: center;
 }
 
-.text-2,
-.text-3 {
-  width: 35%;
-  text-align: center;
+.text-container {
+  padding: 2.5rem;
 }
 
 @keyframes smoothFloating {
