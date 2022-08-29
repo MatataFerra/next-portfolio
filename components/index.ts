@@ -5,3 +5,4 @@ export * from "./hero-image";
 export * from "./logos";
 export * from "./navbar-modile";
 export * from "./services";
+export * from "./steps";

@@ -12,6 +12,7 @@ $color-gray: #c4c4c4;
 $color-purple: #8000ff;
 $color-light-purple: #cf59e6;
 $color-light-blue: #6bc5f8;
+$color-light-blue-2: #5ce1e6;
 $color-red: #ec5354;
 
 // Breakpoints
@@ -33,5 +34,43 @@ $breakpoint-xxl: 1400px;
     color: $color-secondary;
     box-shadow: 0 1rem 2rem rgb(43 41 41 / 40%);
     transform: rotate(-5deg) scale(1.1);
+  }
+}
+
+@mixin gradientText {
+  background: -webkit-linear-gradient(
+    135deg,
+    $color-light-blue,
+    $color-light-purple,
+    $color-light-blue,
+    $color-light-purple
+  );
+  background: linear-gradient(
+    -45deg,
+    $color-light-blue,
+    $color-light-purple,
+    $color-light-blue,
+    $color-light-purple
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+}
+
+//------------------------------
+//---- Animations --------------
+//------------------------------
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
   }
 }

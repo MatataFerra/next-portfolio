@@ -68,7 +68,7 @@ export const TweenImages: FC = () => {
             <Timeline totalProgress={progress} paused stagger={1}>
               {images.map((image, index) => {
                 return (
-                  <Tween key={index} from={{ opacity: 0, x: -200 }} to={{ opacity: 1, x: 550 }}>
+                  <Tween key={index} from={{ opacity: 0, x: 700 }} to={{ opacity: 1, x: 0 }}>
                     <ImageForwardRef {...image} ref={divRef} />
                   </Tween>
                 );

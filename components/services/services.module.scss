@@ -1,8 +1,8 @@
 @import "../../styles/references";
 
 @mixin SmoothAnimation {
-  transition: all 0.3s ease-in-out;
-  animation: alternate smoothFloating 10s ease-in-out infinite;
+  animation: alternate smoothFloating 10s ease-in-out;
+  animation-iteration-count: 10;
 }
 
 .section {
@@ -28,74 +28,98 @@
   justify-content: center;
   align-content: stretch;
 
-  @media screen and (max-width: 1920px) and (min-width: 1380px) {
+  @media screen and (max-width: 3000px) and (min-width: 1380px) {
     grid-template-rows: repeat(20, 2.5%);
   }
 }
 
 .screen {
-  @include SmoothAnimation;
-  z-index: 1;
   grid-column: 15 / 25;
   grid-row: 1 / 11;
   height: min-content;
 }
 
 .search {
-  @include SmoothAnimation;
-  z-index: 3;
   grid-column: 22 / 24;
   grid-row: 2;
   height: min-content;
 }
 
 .banner {
-  @include SmoothAnimation;
-  z-index: 2;
   grid-column: 16 / 24;
   grid-row: 6 / 6;
   height: min-content;
 }
 
 .block {
-  @include SmoothAnimation;
-  z-index: 3;
   height: min-content;
   grid-column: 16 / 17;
   grid-row: 10;
+
+  @media screen and (max-width: $breakpoint-sm) {
+    grid-row: 10 span;
+  }
+}
+
+.line-1,
+.line-2,
+.line-3 {
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex;
+  }
 }
 
 .line-1 {
-  @include SmoothAnimation;
-  z-index: 3;
   height: min-content;
   grid-column: 18 / 19;
   grid-row: 11 / 12;
+  @media screen and (max-width: $breakpoint-sm) {
+    align-self: flex-end;
+  }
 }
 
 .line-2 {
-  @include SmoothAnimation;
-  z-index: 3;
   height: min-content;
   grid-column: 18 / 19;
   grid-row: 12;
+  @media screen and (max-width: $breakpoint-sm) {
+    align-self: center;
+  }
 }
 
 .line-3 {
-  @include SmoothAnimation;
   height: min-content;
   grid-column: 17 / 19;
   grid-row: 13;
-  z-index: 3;
+  @media screen and (max-width: $breakpoint-sm) {
+    align-self: flex-start;
+  }
+}
+
+.text-1,
+.text-2,
+.text-3 {
+  padding: 0.5rem 1rem;
 }
 
 .text {
   width: 100%;
   text-align: center;
+
+  p {
+    margin: 0;
+  }
 }
 
 .text-container {
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 0.5rem;
+  }
 }
 
 @keyframes smoothFloating {

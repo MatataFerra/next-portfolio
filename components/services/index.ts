@@ -3,3 +3,4 @@ export * from "./ServiceText";
 export * from "./TweenImage";
 export * from "./TweenText";
 export * from "./ImageForwardRef";
+export * from "./ModalService";

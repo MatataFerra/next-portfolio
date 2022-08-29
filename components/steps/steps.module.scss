@@ -1,0 +1,235 @@
+@import "../../styles/references";
+
+.h2 {
+  text-align: center;
+}
+
+.p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-shadow: 0 1rem 2rem rgb(43 41 41 / 40%);
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 2;
+  white-space: break-spaces;
+}
+
+.gradient {
+  @include gradientText;
+}
+
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-in;
+  width: 300px;
+  z-index: 1;
+
+  &:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: translateY(-0.5rem);
+  }
+
+  &:hover .image {
+    animation: moveHand 3s forwards;
+  }
+
+  &:hover .line {
+    animation: moveLine forwards;
+    animation-delay: 0.7s;
+    animation-duration: 6s;
+  }
+
+  &:hover .span {
+    animation: opacity forwards;
+    animation-delay: 3s;
+    animation-duration: 0.5s;
+  }
+
+  &:hover .line-2 {
+    animation: moveLineHero forwards;
+    animation-delay: 2.5s;
+    animation-duration: 2s;
+  }
+
+  &:hover .span-2 {
+    animation: opacity forwards;
+    animation-delay: 4s;
+    animation-duration: 0.5s;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    position: static;
+    z-index: 0;
+  }
+}
+
+.image {
+  transition: all 1s ease-in;
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+
+.line {
+  padding: 1rem;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+}
+
+.line-2 {
+  padding: 5rem;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+}
+
+.span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+}
+
+.span-2 {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+}
+
+.div {
+  transition: all 0.2s ease-in;
+  background-color: $color-light-blue-2;
+  height: 100%;
+  width: 100%;
+}
+
+.canvas {
+  display: flex;
+  justify-content: space-between;
+}
+
+@keyframes moveHand {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  12% {
+    transform: translate(0, 2rem);
+  }
+
+  24% {
+    transform: translate(270px, 2rem);
+  }
+
+  48% {
+    transform: translate(270px, 0);
+  }
+
+  60% {
+    transform: translate(0, 0);
+  }
+
+  72% {
+    transform: translate(0, 15.5rem);
+  }
+
+  84% {
+    transform: translate(270px, 15.5rem);
+  }
+
+  96% {
+    transform: translate(270px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveLine {
+  0% {
+    border-left: 0px solid $color-light-blue-2;
+  }
+  25% {
+    border-left: 1px solid #000;
+  }
+  50% {
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+
+  75% {
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+
+  100% {
+    border: 1px solid #000;
+  }
+}
+
+@keyframes moveLineHero {
+  0% {
+    border-left: 0px solid $color-light-blue-2;
+  }
+  25% {
+    border-left: 1px solid #000;
+  }
+  50% {
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+
+  75% {
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+
+  100% {
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    background-color: #a76571;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
