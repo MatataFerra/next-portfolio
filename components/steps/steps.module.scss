@@ -1,4 +1,5 @@
 @import "../../styles/references";
+@import "./animations";
 
 .h2 {
   text-align: center;
@@ -31,7 +32,6 @@
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -47,6 +47,22 @@
     transform: translateY(-0.5rem);
   }
 
+  @media screen and (max-width: $breakpoint-sm) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    position: static;
+    z-index: 0;
+  }
+}
+
+//-------------------
+// Step Card Drawing
+//-------------------
+
+.card {
   &:hover .image {
     animation: moveHand 3s forwards;
   }
@@ -73,16 +89,6 @@
     animation: opacity forwards;
     animation-delay: 4s;
     animation-duration: 0.5s;
-  }
-
-  @media screen and (max-width: $breakpoint-sm) {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    box-shadow: none;
-    overflow: visible;
-    position: static;
-    z-index: 0;
   }
 }
 
@@ -138,98 +144,80 @@
   justify-content: space-between;
 }
 
-@keyframes moveHand {
-  0% {
-    transform: translate(0, 0);
-  }
+//-------------------
+// Step Card Coding
+//-------------------
+$colors: $color-line-1, $color-line-2, $color-line-3, $color-line-4, $color-line-5, $color-line-6,
+  $color-line-7, $color-line-8, $color-line-9, $color-line-10, $color-line-11,
+  $color-line-12 $color-line-13, $color-line-14, $color-line-15, $color-line-16, $color-line-17,
+  $color-line-18, $color-line-19;
 
-  12% {
-    transform: translate(0, 2rem);
-  }
+$number-of-lines: 18;
 
-  24% {
-    transform: translate(270px, 2rem);
-  }
+@mixin CodeLine($color) {
+  border: 0.5rem solid $color;
+  border-radius: 0.3rem;
+  width: 0%;
+}
 
-  48% {
-    transform: translate(270px, 0);
-  }
+@function CodeLineAnimation($duration) {
+  @return $duration + 0.5s;
+}
 
-  60% {
-    transform: translate(0, 0);
-  }
+.coding {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.5rem;
 
-  72% {
-    transform: translate(0, 15.5rem);
-  }
-
-  84% {
-    transform: translate(270px, 15.5rem);
-  }
-
-  96% {
-    transform: translate(270px, 0);
-  }
-
-  100% {
-    transform: translate(0, 0);
+  @for $i from 1 through $number-of-lines {
+    &:hover .code-line-#{$i} {
+      animation: growLine-full forwards;
+      animation-duration: 0.1s;
+      animation-delay: CodeLineAnimation(0.1s * ($i - 1));
+    }
   }
 }
 
-@keyframes moveLine {
-  0% {
-    border-left: 0px solid $color-light-blue-2;
-  }
-  25% {
-    border-left: 1px solid #000;
-  }
-  50% {
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-  }
+.code-container-2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 30% 10%;
+  width: 100%;
+}
 
-  75% {
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-right: 1px solid #000;
-  }
+.code-container-3 {
+  @extend .code-container-2;
+  grid-template-columns: 50% 50%;
+}
 
-  100% {
-    border: 1px solid #000;
+.code-container-4 {
+  @extend .code-container-2;
+  grid-template-columns: 70%;
+}
+
+.code-container-5 {
+  @extend .code-container-2;
+  grid-template-columns: 20% 40% 30%;
+}
+
+@for $i from 1 through $number-of-lines {
+  .code-line-#{$i} {
+    border-radius: 0.3rem;
+    border: 0.5rem solid nth($colors, $i);
+    width: 0%;
+    opacity: 0;
   }
 }
 
-@keyframes moveLineHero {
+@keyframes growLine-full {
   0% {
-    border-left: 0px solid $color-light-blue-2;
-  }
-  25% {
-    border-left: 1px solid #000;
-  }
-  50% {
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-  }
-
-  75% {
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-right: 1px solid #000;
-  }
-
-  100% {
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-right: 1px solid #000;
-    background-color: #a76571;
-  }
-}
-
-@keyframes opacity {
-  0% {
+    width: 0%;
     opacity: 0;
   }
   100% {
+    width: 90%;
     opacity: 1;
   }
 }

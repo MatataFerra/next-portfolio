@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./steps.module.scss";
-import { StepCardContainer, StepCardDrawIdeas } from ".";
+import { StepCardCoding, StepCardContainer, StepCardDrawIdeas } from ".";
 
 export const Steps: FC = () => {
   return (
@@ -9,8 +9,11 @@ export const Steps: FC = () => {
         How do I create <span className={styles.gradient}>ideas</span>{" "}
       </h2>
       <div className={styles["card-container"]}>
-        <StepCardContainer>
+        <StepCardContainer title='Step 1: Drawing your ideas'>
           <StepCardDrawIdeas />
+        </StepCardContainer>
+        <StepCardContainer title='Step 2: Start coding!' cssClass='coding'>
+          <StepCardCoding />
         </StepCardContainer>
       </div>
     </>

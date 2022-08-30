@@ -1,0 +1,95 @@
+@keyframes moveHand {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  12% {
+    transform: translate(0, 2rem);
+  }
+
+  24% {
+    transform: translate(270px, 2rem);
+  }
+
+  48% {
+    transform: translate(270px, 0);
+  }
+
+  60% {
+    transform: translate(0, 0);
+  }
+
+  72% {
+    transform: translate(0, 15.5rem);
+  }
+
+  84% {
+    transform: translate(270px, 15.5rem);
+  }
+
+  96% {
+    transform: translate(270px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveLine {
+  0% {
+    border-left: 0px solid $color-light-blue-2;
+  }
+  25% {
+    border-left: 1px solid $color-dark-gray;
+  }
+  50% {
+    border-left: 1px solid $color-dark-gray;
+    border-bottom: 1px solid $color-dark-gray;
+  }
+
+  75% {
+    border-left: 1px solid $color-dark-gray;
+    border-bottom: 1px solid $color-dark-gray;
+    border-right: 1px solid $color-dark-gray;
+  }
+
+  100% {
+    border: 1px solid $color-dark-gray;
+  }
+}
+
+@keyframes moveLineHero {
+  0% {
+    border-left: 0px solid $color-light-blue-2;
+  }
+  25% {
+    border-left: 1px solid $color-dark-gray;
+  }
+  50% {
+    border-left: 1px solid $color-dark-gray;
+    border-bottom: 1px solid $color-dark-gray;
+  }
+
+  75% {
+    border-left: 1px solid $color-dark-gray;
+    border-bottom: 1px solid $color-dark-gray;
+    border-right: 1px solid $color-dark-gray;
+  }
+
+  100% {
+    border-left: 1px solid $color-dark-gray;
+    border-bottom: 1px solid $color-dark-gray;
+    border-right: 1px solid $color-dark-gray;
+    background-color: #a76571;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
