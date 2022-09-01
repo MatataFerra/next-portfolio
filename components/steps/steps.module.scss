@@ -29,7 +29,7 @@
 
 .card {
   align-items: center;
-  background-color: #fff;
+  background-color: var(--background-color-panel);
   border-radius: 0.5rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   display: flex;
@@ -220,4 +220,12 @@ $number-of-lines: 18;
     width: 90%;
     opacity: 1;
   }
+}
+
+//-------------------
+// Step Card Review
+//-------------------
+
+.cursor-change {
+  cursor: url("/assets/images/steps/lupa.png"), auto;
 }

@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import Image from "next/image";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { Canvas, HamIcon } from ".";
 import styles from "./steps.module.scss";
 
@@ -7,11 +8,18 @@ interface Props {
   children: React.ReactNode;
   cssClass?: string;
   title: string;
+  styles?: CSSProperties;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-export const StepCardContainer: FC<Props> = ({ title, cssClass, children }) => {
+export const StepCardContainer: FC<Props> = ({ title, cssClass, children, ...rest }) => {
   return (
-    <div className={`${styles.card} ${cssClass && styles[cssClass]}`}>
+    <div
+      className={`${styles.card} ${
+        !!cssClass && cssClass?.trim().length > 0 ? styles[cssClass] : ""
+      }`}
+      {...rest}>
       <p className={styles.p}>{title}</p>
       {children}
     </div>
@@ -78,6 +86,27 @@ export const StepCardCoding: FC = () => {
       </div>
       <div className={styles["code-line-18"]} />
       <div className={styles["code-line-19"]} />
+    </>
+  );
+};
+
+export const StepCardReview: FC = () => {
+  return (
+    <>
+      <TransformWrapper>
+        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+          <TransformComponent>
+            <div onMouseEnter={() => zoomIn()} onMouseLeave={() => resetTransform()}>
+              <Image
+                src={"/assets/images/steps/mockup.jpg"}
+                alt='mockup'
+                width={250}
+                height={350}
+              />
+            </div>
+          </TransformComponent>
+        )}
+      </TransformWrapper>
     </>
   );
 };
