@@ -3,6 +3,7 @@
 
 .h2 {
   text-align: center;
+  font-size: 48px;
 }
 
 .p {
@@ -15,6 +16,17 @@
   font-weight: bold;
   z-index: 2;
   white-space: break-spaces;
+
+  @media screen and (max-width: $breakpoint-md) {
+    font-size: initial;
+    margin: 0;
+    position: static;
+    padding: 1rem 0;
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    font-size: 24px;
+  }
 }
 
 .gradient {
@@ -23,8 +35,15 @@
 
 .card-container {
   display: flex;
+  justify-content: center;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 2rem;
+
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
 }
 
 .card {
@@ -62,9 +81,13 @@
 // Step Card Drawing
 //-------------------
 
-.card {
+.step-1 {
   &:hover .image {
     animation: moveHand 3s forwards;
+
+    @media screen and (max-width: $breakpoint-md) {
+      animation: moveHandMobile 3s forwards;
+    }
   }
 
   &:hover .line {
@@ -90,6 +113,18 @@
     animation-delay: 4s;
     animation-duration: 0.5s;
   }
+
+  @media screen and (max-width: $breakpoint-md) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 20%;
+    position: relative;
+    padding: 1rem;
+
+    .p {
+      grid-row: 3;
+    }
+  }
 }
 
 .image {
@@ -97,6 +132,11 @@
   position: absolute;
   top: 0;
   left: 5%;
+  @media screen and (max-width: $breakpoint-md) {
+    position: absolute;
+    top: -10%;
+    left: 5%;
+  }
 }
 
 .line {
@@ -113,6 +153,22 @@
   top: 20%;
   left: 5%;
   width: 90%;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    padding: 3rem;
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 5rem;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .line,
+  .line-2 {
+    position: static;
+    width: 100%;
+  }
 }
 
 .span {
@@ -147,10 +203,6 @@
 //-------------------
 // Step Card Coding
 //-------------------
-$colors: $color-line-1, $color-line-2, $color-line-3, $color-line-4, $color-line-5, $color-line-6,
-  $color-line-7, $color-line-8, $color-line-9, $color-line-10, $color-line-11,
-  $color-line-12 $color-line-13, $color-line-14, $color-line-15, $color-line-16, $color-line-17,
-  $color-line-18, $color-line-19;
 
 $number-of-lines: 18;
 
@@ -158,6 +210,7 @@ $number-of-lines: 18;
   border: 0.5rem solid $color;
   border-radius: 0.3rem;
   width: 0%;
+  opacity: 0;
 }
 
 @function CodeLineAnimation($duration) {
@@ -176,6 +229,23 @@ $number-of-lines: 18;
       animation: growLine-full forwards;
       animation-duration: 0.1s;
       animation-delay: CodeLineAnimation(0.1s * ($i - 1));
+    }
+  }
+
+  @for $i from 1 through $number-of-lines {
+    .code-line-#{$i} {
+      $color: map-get($map-colors, color-line-#{$i});
+      @include CodeLine($color);
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    justify-content: center;
+  }
+
+  .p {
+    @media screen and (max-width: $breakpoint-md) {
+      order: 1;
     }
   }
 }
@@ -202,15 +272,6 @@ $number-of-lines: 18;
   grid-template-columns: 20% 40% 30%;
 }
 
-@for $i from 1 through $number-of-lines {
-  .code-line-#{$i} {
-    border-radius: 0.3rem;
-    border: 0.5rem solid nth($colors, $i);
-    width: 0%;
-    opacity: 0;
-  }
-}
-
 @keyframes growLine-full {
   0% {
     width: 0%;
@@ -226,6 +287,33 @@ $number-of-lines: 18;
 // Step Card Review
 //-------------------
 
-.cursor-change {
-  cursor: url("/assets/images/steps/lupa.png"), auto;
+.card-review {
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &:hover .image-magnifier {
+    transform: translate(0, 0);
+  }
+
+  .p {
+    @media screen and (max-width: $breakpoint-md) {
+      order: 2;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 1rem;
+  }
+}
+
+.image-magnifier {
+  position: relative;
+  margin: 2rem 0;
+  transform: translate(0, -150%);
+  transition: 1s all ease-in-out;
+
+  @media screen and (max-width: $breakpoint-md) {
+    margin: 0;
+    transform: translate(-150%, 0);
+  }
 }

@@ -1,7 +1,6 @@
 import { CSSProperties, FC } from "react";
 import Image from "next/image";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { Canvas, HamIcon } from ".";
+import { Canvas, HamIcon, ImageMagnifier } from ".";
 import styles from "./steps.module.scss";
 
 interface Props {
@@ -93,20 +92,7 @@ export const StepCardCoding: FC = () => {
 export const StepCardReview: FC = () => {
   return (
     <>
-      <TransformWrapper>
-        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-          <TransformComponent>
-            <div onMouseEnter={() => zoomIn()} onMouseLeave={() => resetTransform()}>
-              <Image
-                src={"/assets/images/steps/mockup.jpg"}
-                alt='mockup'
-                width={250}
-                height={350}
-              />
-            </div>
-          </TransformComponent>
-        )}
-      </TransformWrapper>
+      <ImageMagnifier src='/assets/images/steps/mockup-2.svg' height='200' width='300' />
     </>
   );
 };

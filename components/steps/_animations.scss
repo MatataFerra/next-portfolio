@@ -1,3 +1,7 @@
+@import "../../styles/references";
+
+$limitDesktop: 270px;
+$limitMobile: 300px;
 @keyframes moveHand {
   0% {
     transform: translate(0, 0);
@@ -8,11 +12,11 @@
   }
 
   24% {
-    transform: translate(270px, 2rem);
+    transform: translate($limitDesktop, 2rem);
   }
 
   48% {
-    transform: translate(270px, 0);
+    transform: translate($limitDesktop, 0);
   }
 
   60% {
@@ -24,11 +28,49 @@
   }
 
   84% {
-    transform: translate(270px, 15.5rem);
+    transform: translate($limitDesktop, 15.5rem);
   }
 
   96% {
-    transform: translate(270px, 0);
+    transform: translate($limitDesktop, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveHandMobile {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  12% {
+    transform: translate(0, 2rem);
+  }
+
+  24% {
+    transform: translate($limitMobile, 2rem);
+  }
+
+  48% {
+    transform: translate($limitMobile, 0);
+  }
+
+  60% {
+    transform: translate(0, 0);
+  }
+
+  72% {
+    transform: translate(0, 15.5rem);
+  }
+
+  84% {
+    transform: translate($limitMobile, 15.5rem);
+  }
+
+  96% {
+    transform: translate($limitMobile, 0);
   }
 
   100% {
