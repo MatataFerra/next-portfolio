@@ -1,0 +1,103 @@
+@import "../../styles/references";
+
+.main {
+  height: 100vh;
+  margin-top: 3rem;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 1rem;
+  gap: 2rem;
+
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.h2 {
+  text-align: center;
+  font-size: 48px;
+}
+
+.h3 {
+  text-align: center;
+  background-color: $color-white-transparent;
+  backdrop-filter: 10px;
+  font-size: 20px;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+}
+
+.card {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: $color-primary;
+  color: $color-black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.cardLinks {
+  display: flex;
+  background-color: $color-primary;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover .image {
+    animation: moveAndRotateIcon 0.5s;
+    animation-fill-mode: backwards;
+  }
+
+  .image {
+    display: flex;
+    transform: rotate(360deg);
+  }
+}
+
+.cardLinkContainer {
+  display: flex;
+  align-items: center;
+}
+
+.goto {
+  font-size: 0;
+}
+
+.gotoSpace {
+  margin-right: 0.2rem;
+}
+
+.gotoSpaceL {
+  margin-left: 0.2rem;
+}
+
+@keyframes moveAndRotateIcon {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

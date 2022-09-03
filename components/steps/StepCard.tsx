@@ -1,5 +1,6 @@
 import { CSSProperties, FC } from "react";
 import Image from "next/image";
+import { GlassMagnifier } from "react-image-magnifiers";
 import { Canvas, HamIcon, ImageMagnifier } from ".";
 import styles from "./steps.module.scss";
 
@@ -93,6 +94,11 @@ export const StepCardReview: FC = () => {
   return (
     <>
       <ImageMagnifier src='/assets/images/steps/mockup-2.svg' height='200' width='300' />
+      {/* <GlassMagnifier
+        imageSrc='/assets/images/steps/mockup-2.svg'
+        imageAlt='mockup'
+        className={styles["image-magnifier"]}
+      /> */}
     </>
   );
 };
