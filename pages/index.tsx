@@ -14,6 +14,7 @@ import {
 } from "../components";
 import styles from "../styles/home.module.scss";
 import trigger from "../components/services/services.module.scss";
+import { Technologies } from "../components/technologies/Technologies";
 
 const Home: NextPage = () => {
   const device = useDevice();
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
           <Steps />
           <Projects />
           <About />
+          <Technologies />
         </div>
       </section>
     </HomeLayout>

@@ -3,6 +3,10 @@
 .main {
   width: 70%;
   margin: 5rem auto;
+
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 
 .pic-container {
@@ -11,7 +15,11 @@
   grid-gap: 1rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  background-color: $color-light-gray;
+  background-color: var(--background-color-panel);
+
+  @media screen and (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .pic {
@@ -42,6 +50,10 @@
 .history {
   padding: 1rem;
   grid-column: 1 / 3;
+
+  @media screen and (max-width: $breakpoint-md) {
+    grid-column: auto;
+  }
 }
 
 .h2 {
@@ -94,4 +106,10 @@
 
 .brief {
   margin: 2rem 0;
+}
+
+.longest {
+  .strong {
+    margin-left: 0.5rem;
+  }
 }

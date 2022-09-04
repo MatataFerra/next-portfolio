@@ -9,6 +9,7 @@ import {
   ButtonGroup,
   HistoriesProps,
   StateButtonClickProps,
+  TEXT_HISTORY,
 } from ".";
 
 const INITIAL_BUTTONS_STATE = {
@@ -19,34 +20,34 @@ const INITIAL_BUTTONS_STATE = {
   5: false,
 };
 
-const HISTORIES: HistoriesProps = {
-  1: {
-    title: "Shortest",
-    content: <Shortest />,
-  },
-
-  2: {
-    title: "Short",
-    content: <Short />,
-  },
-  3: {
-    title: "Medium",
-    content: <Medium />,
-  },
-
-  4: {
-    title: "Long",
-    content: <Long />,
-  },
-
-  5: {
-    title: "Longest",
-    content: <Longest />,
-  },
-};
-
 export const History: FC = () => {
   const [buttonClicked, setButtonClicked] = useState<StateButtonClickProps>(INITIAL_BUTTONS_STATE);
+  const HISTORIES: HistoriesProps = {
+    1: {
+      title: "Shortest",
+      content: <Shortest text={TEXT_HISTORY} limit={1} />,
+    },
+
+    2: {
+      title: "Short",
+      content: <Short text={TEXT_HISTORY} limit={3} />,
+    },
+
+    3: {
+      title: "Medium",
+      content: <Medium text={TEXT_HISTORY} limit={5} />,
+    },
+
+    4: {
+      title: "Long",
+      content: <Long text={TEXT_HISTORY} limit={9} />,
+    },
+
+    5: {
+      title: "Longest",
+      content: <Longest text={TEXT_HISTORY} limit={12} />,
+    },
+  };
 
   const onClickedButton = (e: any) => {
     setButtonClicked(INITIAL_BUTTONS_STATE);
@@ -78,7 +79,7 @@ export const History: FC = () => {
 
       {Object.keys(buttonClicked).map((key) => {
         if (buttonClicked[key]) {
-          return <>{HISTORIES[key].content}</>;
+          return <div key={HISTORIES[key].title}>{HISTORIES[key].content}</div>;
         }
       })}
     </div>

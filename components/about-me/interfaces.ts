@@ -14,3 +14,8 @@ export interface HistoriesProps {
     content: React.ReactNode;
   };
 }
+
+export interface BioProps {
+  text: string;
+  limit: number;
+}

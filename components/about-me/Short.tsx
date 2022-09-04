@@ -1,14 +1,13 @@
 import { FC } from "react";
+import { useText } from "../../hooks";
 import styles from "./about.module.scss";
+import { BioProps } from "./interfaces";
 
-export const Short: FC = () => {
+export const Short: FC<BioProps> = ({ text, limit }) => {
+  const textToRender = useText(text, limit);
   return (
     <section className={`${styles.short} ${styles.brief}`}>
-      <p className={styles.p}>
-        I was born in 1989 in Buenos Aires. I love football and I{"'"}m a fan of Boca Juniors. I
-        studied at the University of Palermo and I{"'"}m. Later I worked as a developer in a company
-        called Steplix
-      </p>
+      <p className={styles.p}>{textToRender}</p>
     </section>
   );
 };

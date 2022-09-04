@@ -4,7 +4,7 @@ import styles from "./projects.module.scss";
 
 export const Projects: FC = () => {
   return (
-    <>
+    <section className={styles.section}>
       <div className={styles.main}>
         <h2 className={styles.h2}>My Projects</h2>
 
@@ -41,6 +41,6 @@ export const Projects: FC = () => {
           />
         </section>
       </div>
-    </>
+    </section>
   );
 };

@@ -27,7 +27,6 @@ export const ProjectCard: FC<Props> = ({ imgSrc, href, title }) => {
   };
   return (
     <div className={styles.card}>
-      <h3 className={styles.h3}>{title}</h3>
       <Image src={imgSrc} alt='Project' layout='fill' priority />
       <NextLink href={href} passHref>
         <a

@@ -1,12 +1,16 @@
-import { FC } from "react";
+import { FC, useMemo } from "react";
+import { BioProps } from ".";
+import { useText } from "../../hooks";
 import styles from "./about.module.scss";
 
-export const Shortest: FC = () => {
+const Shortest: FC<BioProps> = ({ text, limit }) => {
+  const textToRender = useText(text, limit);
+
   return (
     <section className={`${styles.shortest} ${styles.brief}`}>
-      <p className={styles.p}>
-        I was born in 1989 in Buenos Aires. I love football and I{"'"}m a fan of Boca Juniors
-      </p>
+      <p className={styles.p}>{textToRender}</p>
     </section>
   );
 };
+
+export default Shortest;
