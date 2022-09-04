@@ -1,6 +1,15 @@
 import { FC, useState } from "react";
 import styles from "./about.module.scss";
-import { Shortest, Short, Button, ButtonGroup } from ".";
+import {
+  Shortest,
+  Short,
+  Medium,
+  Long,
+  Longest,
+  ButtonGroup,
+  HistoriesProps,
+  StateButtonClickProps,
+} from ".";
 
 const INITIAL_BUTTONS_STATE = {
   1: true,
@@ -10,19 +19,47 @@ const INITIAL_BUTTONS_STATE = {
   5: false,
 };
 
+const HISTORIES: HistoriesProps = {
+  1: {
+    title: "Shortest",
+    content: <Shortest />,
+  },
+
+  2: {
+    title: "Short",
+    content: <Short />,
+  },
+  3: {
+    title: "Medium",
+    content: <Medium />,
+  },
+
+  4: {
+    title: "Long",
+    content: <Long />,
+  },
+
+  5: {
+    title: "Longest",
+    content: <Longest />,
+  },
+};
+
 export const History: FC = () => {
-  const [buttonClicked, setButtonClicked] = useState(INITIAL_BUTTONS_STATE);
+  const [buttonClicked, setButtonClicked] = useState<StateButtonClickProps>(INITIAL_BUTTONS_STATE);
 
   const onClickedButton = (e: any) => {
     setButtonClicked(INITIAL_BUTTONS_STATE);
 
-    setButtonClicked({
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-      5: false,
-      [e.target.value]: true,
+    setButtonClicked((prev) => {
+      Object.keys(prev).forEach((key) => {
+        prev[key] = false;
+      });
+
+      return {
+        ...prev,
+        [e.target.value]: true,
+      };
     });
   };
 
@@ -39,7 +76,11 @@ export const History: FC = () => {
         <span>Longest</span>
       </div>
 
-      {(buttonClicked[1] && <Shortest />) || (buttonClicked[2] && <Short />)}
+      {Object.keys(buttonClicked).map((key) => {
+        if (buttonClicked[key]) {
+          return <>{HISTORIES[key].content}</>;
+        }
+      })}
     </div>
   );
 };

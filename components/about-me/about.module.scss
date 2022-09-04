@@ -52,7 +52,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   width: 300px;
   justify-content: space-between;
 }
@@ -63,6 +63,7 @@
   background-color: $color;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  border: 1px solid $color-light-purple;
 }
 
 .button-inactive {
@@ -84,6 +85,11 @@
   margin: 1rem 0;
   width: 300px;
   justify-content: space-between;
+  font-size: 12px;
+
+  span {
+    color: $color-dark-gray;
+  }
 }
 
 .brief {

@@ -3,3 +3,14 @@ export interface PropsIcon {
   height: number;
   fill: string;
 }
+
+export interface StateButtonClickProps {
+  [key: string | number]: boolean;
+}
+
+export interface HistoriesProps {
+  [key: string | number]: {
+    title: string;
+    content: React.ReactNode;
+  };
+}
