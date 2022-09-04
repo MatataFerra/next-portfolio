@@ -1,8 +1,7 @@
 @import "../../styles/references";
 
 .main {
-  height: 100vh;
-  margin-top: 3rem;
+  margin: 3rem 0;
 }
 
 .projects-container {
@@ -83,6 +82,7 @@
 
 .goto {
   font-size: 0;
+  color: $color-dark-gray;
 }
 
 .gotoSpace {

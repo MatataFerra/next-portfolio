@@ -10,6 +10,7 @@ import {
   Services,
   Steps,
   Projects,
+  About,
 } from "../components";
 import styles from "../styles/home.module.scss";
 import trigger from "../components/services/services.module.scss";
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
           <Services />
           <Steps />
           <Projects />
+          <About />
         </div>
       </section>
     </HomeLayout>

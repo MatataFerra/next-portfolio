@@ -7,3 +7,4 @@ export * from "./navbar-modile";
 export * from "./services";
 export * from "./steps";
 export * from "./projects";
+export * from "./about-me";
