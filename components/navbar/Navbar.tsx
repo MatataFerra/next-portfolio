@@ -1,14 +1,13 @@
 import { FC, useState } from "react";
 import NextLink from "next/link";
 import { EmailIcon, DarkModeIcon, LightModeIcon } from ".";
-import { DarkLogo, LightLogo } from "../logos";
-
+import { Logos } from "../logos";
 import styles from "./navbar.module.scss";
 import { useToggleTheme } from "../../hooks";
 
 export const Navbar: FC = () => {
   const [changeTheme, setChangeTheme] = useState(false);
-  const { theme, toggleTheme } = useToggleTheme();
+  const { toggleTheme } = useToggleTheme();
 
   const onChangeTheme = () => {
     setChangeTheme((prev) => !prev);
@@ -16,9 +15,7 @@ export const Navbar: FC = () => {
   };
   return (
     <nav className={styles.navbar}>
-      <section className={styles["section-1"]}>
-        {theme === "light" ? <LightLogo /> : <DarkLogo />}
-      </section>
+      <Logos />
 
       <section className={styles["section-2"]}>
         <article className={styles.article}>
