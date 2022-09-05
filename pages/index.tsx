@@ -11,6 +11,7 @@ import {
   Steps,
   Projects,
   About,
+  Footer,
 } from "../components";
 import styles from "../styles/home.module.scss";
 import trigger from "../components/services/services.module.scss";
@@ -37,6 +38,7 @@ const Home: NextPage = () => {
           <Technologies />
         </div>
       </section>
+      <Footer />
     </HomeLayout>
   );
 };

@@ -9,3 +9,4 @@ export * from "./steps";
 export * from "./projects";
 export * from "./about-me";
 export * from "./technologies";
+export * from "./footer";
