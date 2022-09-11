@@ -22,3 +22,21 @@
   border-top: 0.5rem solid $color-black;
   width: 50%;
 }
+
+.svg {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}

@@ -20,7 +20,7 @@ export const ImageMagnifier: FC<Props> = ({
   height,
   magnifierHeight = 100,
   magnifieWidth = 100,
-  zoomLevel = 1.5,
+  zoomLevel = 2.5,
 }) => {
   const [[x, y], setXY] = useState([0, 0]);
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);

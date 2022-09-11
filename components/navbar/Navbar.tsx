@@ -4,19 +4,25 @@ import { EmailIcon, DarkModeIcon, LightModeIcon } from ".";
 import { Logos } from "../logos";
 import styles from "./navbar.module.scss";
 import { useToggleTheme } from "../../hooks";
+import { useRouter } from "next/router";
 
 export const Navbar: FC = () => {
   const [changeTheme, setChangeTheme] = useState(false);
+  const router = useRouter();
   const { toggleTheme } = useToggleTheme();
 
   const onChangeTheme = () => {
     setChangeTheme((prev) => !prev);
     toggleTheme();
   };
+
+  const onClickOption = (destination: string) => {
+    router.push(destination);
+  };
+
   return (
     <nav className={styles.navbar}>
       <Logos />
-
       <section className={styles["section-2"]}>
         <article className={styles.article}>
           <div className={styles.contact}>
@@ -35,9 +41,8 @@ export const Navbar: FC = () => {
         </article>
 
         <ul className={styles.ul}>
-          <li>Home</li>
-          <li>Projects</li>
-          <li>Blog</li>
+          <li onClick={() => onClickOption("/")}>Home</li>
+          <li onClick={() => onClickOption("/projects")}>Projects</li>
         </ul>
       </section>
     </nav>
