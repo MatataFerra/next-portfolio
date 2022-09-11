@@ -293,6 +293,7 @@ $number-of-lines: 18;
 
   &:hover .image-magnifier {
     transform: translate(0, 0);
+    cursor: none;
   }
 
   .p {

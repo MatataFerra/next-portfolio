@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ProjectCard } from ".";
+import { ProjectCard, ProjectEmptyCard } from ".";
 import styles from "./projects.module.scss";
 
 export const Projects: FC = () => {
@@ -24,21 +24,7 @@ export const Projects: FC = () => {
             href='https://matiasferraro.netlify.app/'
             title='Windows Clone - Personal Website'
           />
-          <ProjectCard
-            imgSrc='https://media.giphy.com/media/OR2KxVSmZBPr3OCF35/giphy.gif'
-            href='https://jira-ferra.vercel.app/'
-            title='Jira Clone - Project Management'
-          />
-          <ProjectCard
-            imgSrc='https://media.giphy.com/media/ETC3yxtJOxioF0QWxO/giphy.gif'
-            href='https://tateti-nine.vercel.app/'
-            title='Tic Tac Toe - Game'
-          />
-          <ProjectCard
-            imgSrc='https://media.giphy.com/media/wsBGh5NqUja1NcdpiZ/giphy.gif'
-            href='https://pokedex-v1-0.vercel.app/'
-            title='Pokedex - Styles Practice'
-          />
+          <ProjectEmptyCard />
         </section>
       </div>
     </section>
