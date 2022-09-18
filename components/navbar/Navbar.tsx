@@ -5,6 +5,7 @@ import { Logos } from "../logos";
 import styles from "./navbar.module.scss";
 import { useToggleTheme } from "../../hooks";
 import { useRouter } from "next/router";
+import { navigateTo } from "../../utils";
 
 export const Navbar: FC = () => {
   const [changeTheme, setChangeTheme] = useState(false);
@@ -17,7 +18,7 @@ export const Navbar: FC = () => {
   };
 
   const onClickOption = (destination: string) => {
-    router.push(destination);
+    navigateTo(destination, router);
   };
 
   return (
@@ -41,8 +42,9 @@ export const Navbar: FC = () => {
         </article>
 
         <ul className={styles.ul}>
-          <li onClick={() => onClickOption("/")}>Home</li>
-          <li onClick={() => onClickOption("/projects")}>Projects</li>
+          <li onClick={() => navigateTo("/", router)}>Home</li>
+          <li onClick={() => navigateTo("/projects", router)}>Projects</li>
+          <li onClick={() => navigateTo("/articles", router)}>Articles</li>
         </ul>
       </section>
     </nav>

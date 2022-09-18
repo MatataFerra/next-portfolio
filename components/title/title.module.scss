@@ -76,5 +76,6 @@
 }
 
 .gradient {
-  @include gradientText;
+  @include gradientText($color-light-blue, $color-light-purple);
+  font-size: 40px;
 }

@@ -14,7 +14,9 @@ export const HomeLayout: FC<Children> = ({ children }) => {
         {/* {imageFullUrl && <meta name="og:image" content={imageFullUrl} />} */}
       </Head>
 
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <section className={styles.section}>{children}</section>
+      </main>
     </>
   );
 };

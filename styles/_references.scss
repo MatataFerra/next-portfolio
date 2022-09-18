@@ -15,6 +15,10 @@ $color-purple: #8000ff;
 $color-light-purple: #cf59e6;
 $color-light-blue: #6bc5f8;
 $color-light-blue-2: #5ce1e6;
+$color-vue-gradient: (
+  start: #42d392,
+  end: #647eff,
+);
 $color-red: #ec5354;
 $color-white-transparent: rgba(255, 255, 255, 0.563);
 
@@ -64,21 +68,9 @@ $breakpoint-xxl: 1400px;
   }
 }
 
-@mixin gradientText {
-  background: -webkit-linear-gradient(
-    135deg,
-    $color-light-blue,
-    $color-light-purple,
-    $color-light-blue,
-    $color-light-purple
-  );
-  background: linear-gradient(
-    -45deg,
-    $color-light-blue,
-    $color-light-purple,
-    $color-light-blue,
-    $color-light-purple
-  );
+@mixin gradientText($color-1, $color-2) {
+  background: -webkit-linear-gradient(135deg, $color-1, $color-2, $color-1, $color-2);
+  background: linear-gradient(-45deg, $color-1, $color-2, $color-1, $color-2);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

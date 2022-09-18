@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from "react";
 import styles from "./title.module.scss";
-import { LetsTalk, Name } from ".";
+import { Name } from ".";
 import { gsap } from "gsap";
 
 export const Title: FC = () => {

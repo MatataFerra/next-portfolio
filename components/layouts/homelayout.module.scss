@@ -7,3 +7,23 @@
     padding: 0;
   }
 }
+
+.section {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--background-color-panel);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  margin: 0 auto;
+  max-width: 75rem;
+  width: auto;
+
+  @media screen and (max-width: $breakpoint-md) {
+    max-width: auto;
+    width: 100vw;
+    margin: 0;
+  }
+
+  // @media screen and (max-width: $breakpoint-sm) {
+  //   max-width: 20rem;
+  // }
+}
