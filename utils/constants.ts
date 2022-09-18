@@ -1,7 +1,7 @@
 export const PROJECTS_IMAGES_DESCRIPTION = [
   {
     src: "https://res.cloudinary.com/docq8rbdu/image/upload/v1662945824/portfolio-next/d6p32yuzvjsjdtx9tm6p.png",
-    text: "Project build with *React*, Redux for the state management of the site, Styled Components, and MongoDB. This project is a clone of the popular SO Windows 11. It allows you to use apps like the ToDo app and Spotify.",
+    text: "Project build with *React*, Styled Components, *Redux* for the state management of the site, and MongoDB. This project is a clone of the popular SO Windows 11. It allows you to use apps like the ToDo app and Spotify.",
     title: "Windows 11 Clone",
     link: "https://matiasferraro.netlify.app/",
   },

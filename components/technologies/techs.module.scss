@@ -1,6 +1,8 @@
+@import "../../styles/references";
+
 .h2 {
   text-align: center;
-  font-size: 48px;
+  font-size: $h2-size;
   margin: 2rem 0;
 }
 

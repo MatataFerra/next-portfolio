@@ -6,8 +6,9 @@ export const Steps: FC = () => {
   return (
     <>
       <h2 className={styles.h2}>
-        How do I create <span className={styles.gradient}>ideas</span>{" "}
+        How do I create <span className={styles.gradient}>ideas</span>
       </h2>
+      <small className={styles.small}>hint: hover on the images</small>
       <div className={styles["card-container"]}>
         <StepCardContainer title='Step 1: Drawing your ideas' cssClass='step-1'>
           <StepCardDrawIdeas />
