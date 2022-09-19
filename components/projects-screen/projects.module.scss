@@ -1,0 +1,45 @@
+@import "../../styles/references";
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  height: 100%;
+  padding: 2rem 0;
+  border-bottom: 1px solid #cecece;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.image {
+  grid-row: 1 span;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-link {
+  text-decoration: none;
+  color: $font-color;
+  font-weight: 600;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-red;
+  }
+}
+
+.order-1 {
+  grid-column: 1;
+  grid-row: 1;
+}

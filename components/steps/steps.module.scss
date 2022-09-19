@@ -3,7 +3,7 @@
 
 .h2 {
   text-align: center;
-  font-size: 48px;
+  font-size: $h2-size;
 }
 
 .p {
@@ -30,7 +30,13 @@
 }
 
 .gradient {
-  @include gradientText;
+  @include gradientText($color-light-blue, $color-light-purple);
+}
+
+.small {
+  text-align: center;
+  font-style: italic;
+  display: block;
 }
 
 .card-container {

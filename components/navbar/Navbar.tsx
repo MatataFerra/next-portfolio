@@ -1,24 +1,13 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import NextLink from "next/link";
-import { EmailIcon, DarkModeIcon, LightModeIcon } from ".";
+import { EmailIcon, ChangeThemeIcon } from ".";
 import { Logos } from "../logos";
 import styles from "./navbar.module.scss";
 import { useToggleTheme } from "../../hooks";
-import { useRouter } from "next/router";
+import { useNavigateTo } from "../../utils";
 
 export const Navbar: FC = () => {
-  const [changeTheme, setChangeTheme] = useState(false);
-  const router = useRouter();
-  const { toggleTheme } = useToggleTheme();
-
-  const onChangeTheme = () => {
-    setChangeTheme((prev) => !prev);
-    toggleTheme();
-  };
-
-  const onClickOption = (destination: string) => {
-    router.push(destination);
-  };
+  const navigateTo = useNavigateTo();
 
   return (
     <nav className={styles.navbar}>
@@ -33,16 +22,13 @@ export const Navbar: FC = () => {
               </a>
             </NextLink>
           </div>
-          {changeTheme ? (
-            <DarkModeIcon onClick={onChangeTheme} />
-          ) : (
-            <LightModeIcon onClick={onChangeTheme} />
-          )}
+          <ChangeThemeIcon />
         </article>
 
         <ul className={styles.ul}>
-          <li onClick={() => onClickOption("/")}>Home</li>
-          <li onClick={() => onClickOption("/projects")}>Projects</li>
+          <li onClick={() => navigateTo("/")}>Home</li>
+          <li onClick={() => navigateTo("/projects")}>Projects</li>
+          <li onClick={() => navigateTo("/articles")}>Articles</li>
         </ul>
       </section>
     </nav>
