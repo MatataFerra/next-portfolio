@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react";
+import { FC, useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./projects.module.scss";
 import NextLink from "next/link";
@@ -20,13 +20,12 @@ export const ProjectCardScreen: FC<Props> = ({
   alternate,
   linkToProject,
 }) => {
-  const analizerText = useMemo(() => {
+  const boldText = useMemo(() => {
     const strongWords = text.match(/\*(.*?)\*/g);
 
     if (!strongWords) return text;
 
-    const textArray = text.split(/\*(.*?)\*/g);
-    const newText = textArray.map((text, index) => {
+    const textArray = text.split(/\*(.*?)\*/g).map((text, index) => {
       const isStrong = strongWords.includes(`*${text}*`);
       if (isStrong) {
         return (
@@ -39,9 +38,10 @@ export const ProjectCardScreen: FC<Props> = ({
       return text;
     });
 
-    return newText;
+    return textArray;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
+
   return (
     <div className={styles["image-container"]}>
       <Image src={imgSrc} width={500} height={300} alt='Projects' className={styles.image} />
@@ -49,7 +49,7 @@ export const ProjectCardScreen: FC<Props> = ({
         className={`${alternate && styles["order-1"]} ${
           linkToProject && styles["text-container"]
         }`}>
-        <p className={`${cssTextClass ?? ""}`}>{analizerText}</p>
+        <p className={`${cssTextClass ?? ""}`}>{boldText}</p>
         {linkToProject && (
           <NextLink href={linkToProject} passHref>
             <a target='_blank' rel='noopener noreferrer' className={styles["project-link"]}>
