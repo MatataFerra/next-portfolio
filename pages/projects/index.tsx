@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useDevice } from "../../hooks";
-import { ProjectCardScreen, ResponsiveNavbar, HomeLayout } from "../../components";
+import { ProjectCardScreen, ResponsiveNavbar, HomeLayout, Title } from "../../components";
 import { PROJECTS_IMAGES_DESCRIPTION } from "../../utils";
 import styles from "./index.module.scss";
 
@@ -10,9 +10,7 @@ const ProjectsPage: NextPage = () => {
     <HomeLayout>
       <ResponsiveNavbar />
 
-      <div className={styles.h2}>
-        <h2>Projects</h2>
-      </div>
+      <Title title='Projects' />
       {PROJECTS_IMAGES_DESCRIPTION.map((image, index) => {
         const alternate = index % 2 === 0;
         return (

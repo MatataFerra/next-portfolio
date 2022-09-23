@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
 import styles from "./about.module.scss";
-import { Text, ButtonGroup, HistoriesProps, StateButtonClickProps } from ".";
+import { Text, ButtonGroup } from ".";
 import { INITIAL_BUTTONS_STATE, TEXT_HISTORY } from "../../utils";
+import { HistoriesProps, StateButtonClickProps } from "../../interface";
 
 export const History: FC = () => {
   const [buttonClicked, setButtonClicked] = useState<StateButtonClickProps>(INITIAL_BUTTONS_STATE);

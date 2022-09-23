@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { useText } from "../../hooks";
-import styles from "./about.module.scss";
-import { BioProps } from "./interfaces";
 import NextLink from "next/link";
+import { useText } from "../../hooks";
+import { BioProps } from "../../interface";
+import styles from "./about.module.scss";
 
 export const Text: FC<BioProps> = ({ text, limit, cssClass, isLast }) => {
   const textToRender = useText(text, limit);

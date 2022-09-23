@@ -93,12 +93,12 @@ export const StepCardCoding: FC = () => {
 export const StepCardReview: FC = () => {
   return (
     <>
-      <ImageMagnifier src='/assets/images/steps/mockup-2.svg' height='200' width='300' />
-      {/* <GlassMagnifier
+      {/* <ImageMagnifier src='/assets/images/steps/mockup-2.svg' height='200' width='300' /> */}
+      <GlassMagnifier
         imageSrc='/assets/images/steps/mockup-2.svg'
         imageAlt='mockup'
         className={styles["image-magnifier"]}
-      /> */}
+      />
     </>
   );
 };
