@@ -9,7 +9,7 @@ export const Name: FC = () => {
 
   useEffect(() => {
     if (h1Ref.current) {
-      tl.to(q(".letter-animate"), { fontSize: "50px", duration: 0.3, stagger: 0.1 });
+      tl.to(q(".letter-animate"), { fontSize: "5rem", duration: 0.3, stagger: 0.1 });
     }
   }, [q, tl]);
   return (

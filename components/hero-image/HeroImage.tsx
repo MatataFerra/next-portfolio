@@ -1,16 +1,26 @@
 import { FC } from "react";
 import styles from "./heroimage.module.scss";
 import Image from "next/image";
+import { useImageSize } from "../../hooks";
 
-export const HeroImage: FC = () => {
+interface Props {
+  src: string;
+  alt: string;
+  size: number[];
+  propotion: number;
+}
+
+export const HeroImage: FC<Props> = ({ src, alt, size, propotion }) => {
+  const [width, height, imagePropotion] = useImageSize(size, propotion);
+
   return (
     <div className={styles.container}>
       <Image
-        src={"/assets/images/hero-img.webp"}
+        src={src}
         priority
-        width={500}
-        height={300}
-        alt='Hero Image'
+        width={width * imagePropotion}
+        height={height * imagePropotion}
+        alt={alt}
       />
     </div>
   );
