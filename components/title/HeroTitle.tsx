@@ -3,7 +3,7 @@ import styles from "./title.module.scss";
 import { Name } from ".";
 import { gsap } from "gsap";
 
-export const Title: FC = () => {
+export const HeroTitle: FC = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const tl = gsap.timeline();
   const q = gsap.utils.selector(divRef);

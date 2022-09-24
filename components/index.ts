@@ -11,3 +11,4 @@ export * from "./about-me";
 export * from "./technologies";
 export * from "./footer";
 export * from "./projects-screen";
+export * from "./common";

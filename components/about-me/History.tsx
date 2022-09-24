@@ -1,51 +1,35 @@
 import { FC, useState } from "react";
 import styles from "./about.module.scss";
-import {
-  Shortest,
-  Short,
-  Medium,
-  Long,
-  Longest,
-  ButtonGroup,
-  HistoriesProps,
-  StateButtonClickProps,
-  TEXT_HISTORY,
-} from ".";
-
-const INITIAL_BUTTONS_STATE = {
-  1: true,
-  2: false,
-  3: false,
-  4: false,
-  5: false,
-};
+import { Text, ButtonGroup } from ".";
+import { INITIAL_BUTTONS_STATE, TEXT_HISTORY } from "../../utils";
+import { HistoriesProps, StateButtonClickProps } from "../../interface";
 
 export const History: FC = () => {
   const [buttonClicked, setButtonClicked] = useState<StateButtonClickProps>(INITIAL_BUTTONS_STATE);
   const HISTORIES: HistoriesProps = {
     1: {
       title: "Shortest",
-      content: <Shortest text={TEXT_HISTORY} limit={1} />,
+      content: <Text text={TEXT_HISTORY} limit={1} />,
     },
 
     2: {
       title: "Short",
-      content: <Short text={TEXT_HISTORY} limit={3} />,
+      content: <Text text={TEXT_HISTORY} limit={4} />,
     },
 
     3: {
       title: "Medium",
-      content: <Medium text={TEXT_HISTORY} limit={5} />,
+      content: <Text text={TEXT_HISTORY} limit={6} />,
     },
 
     4: {
       title: "Long",
-      content: <Long text={TEXT_HISTORY} limit={9} />,
+      content: <Text text={TEXT_HISTORY} limit={8} />,
     },
 
     5: {
       title: "Longest",
-      content: <Longest text={TEXT_HISTORY} limit={12} />,
+      content: <Text text={TEXT_HISTORY} limit={12} isLast />,
     },
   };
 

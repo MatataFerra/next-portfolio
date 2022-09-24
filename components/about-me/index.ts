@@ -1,15 +1,5 @@
 export * from "./About";
-export * from "./DrinkIcon";
-export * from "./DiplomaIcon";
-export * from "./TravelIcon";
-export * from "./ChildrenIcon";
-export * from "./interfaces";
 export * from "./Icons";
 export * from "./History";
-export { default as Shortest } from "./Shortest";
-export * from "./Short";
-export * from "./Medium";
-export * from "./Long";
-export * from "./Longest";
+export * from "./Text";
 export * from "./Button";
-export * from "./constants";

@@ -18,4 +18,6 @@ export interface HistoriesProps {
 export interface BioProps {
   text: string;
   limit: number;
+  cssClass?: string;
+  isLast?: boolean;
 }

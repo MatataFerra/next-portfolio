@@ -10,7 +10,7 @@ import {
   Services,
   SideBar,
   Steps,
-  Title,
+  HeroTitle,
 } from "../components";
 import styles from "../styles/home.module.scss";
 import trigger from "../components/services/services.module.scss";
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       <ResponsiveNavbar />
       <div className={styles.hero}>
         {device === "desktop" && <SideBar />}
-        <Title />
+        <HeroTitle />
         <HeroImage src="/assets/images/hero.avif" alt="Hero Image" propotion={1} size={imageSize} />
       </div>
       <div className={trigger.trigger} id="trigger"></div>
