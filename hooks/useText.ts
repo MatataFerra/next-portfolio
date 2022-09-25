@@ -2,12 +2,11 @@ import { useMemo } from "react";
 
 export const useText = (text: string, maxLength: number) => {
   const textMemorized = useMemo(() => {
-    const checkLimit = text.split(".").length > maxLength ? maxLength : text.split(".").length;
     const textToshow = text
       ?.split(".")
-      .map((t, i) => {
-        if (i <= checkLimit) {
-          return t.trim();
+      .map((phrase, index) => {
+        if (index <= maxLength) {
+          return phrase.trim();
         }
         return null;
       })

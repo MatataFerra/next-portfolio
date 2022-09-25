@@ -12,3 +12,4 @@ export * from "./technologies";
 export * from "./footer";
 export * from "./projects-screen";
 export * from "./common";
+export * from "./articles";

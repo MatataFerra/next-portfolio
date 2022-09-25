@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import { EmailIcon, ChangeThemeIcon } from ".";
 import { Logos } from "../logos";
 import styles from "./navbar.module.scss";
-import { useNavigateTo } from "../../utils";
+import { useNavigateTo } from "../../hooks";
 
 export const Navbar: FC = () => {
   const navigateTo = useNavigateTo();
@@ -15,7 +15,7 @@ export const Navbar: FC = () => {
         <article className={styles.article}>
           <div className={styles.contact}>
             <EmailIcon width={20} />
-            <NextLink href='mailto:matias.agf@gmail.com'>
+            <NextLink href="mailto:matias.agf@gmail.com">
               <a className={styles.email}>
                 <span className={styles.text}>matias.agf@gmail.com</span>
               </a>

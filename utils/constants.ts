@@ -1,3 +1,17 @@
+import { IconsProps } from "../interface";
+import {
+  Nextdotjs,
+  ReactJs,
+  Redux,
+  Sass,
+  Nodedotjs,
+  Mongodb,
+  Typescript,
+  Express,
+  Github,
+  Javascript,
+} from "@icons-pack/react-simple-icons";
+
 export const INITIAL_BUTTONS_STATE = {
   1: true,
   2: false,
@@ -57,5 +71,41 @@ export const PROJECTS_IMAGES_DESCRIPTION = [
     text: "For practice I build the Pokedex only using *CSS*. Meanwhile I build the app with NextJS, NextUI and I use the PokeAPI to get the data of the Pokemons.",
     title: "Pokedex",
     link: "https://pokedex-v1-0.vercel.app/",
+  },
+];
+
+export const ICONS: IconsProps = {
+  next: { icon: Nextdotjs, color: "#000000" },
+  react: { icon: ReactJs, color: "#61DAFB" },
+  redux: { icon: Redux, color: "#764ABC" },
+  sass: { icon: Sass, color: "#CC6699" },
+  node: { icon: Nodedotjs, color: "#339933" },
+  mongo: { icon: Mongodb, color: "#47A248" },
+  typescript: { icon: Typescript, color: "#3178C6" },
+  javascript: { icon: Javascript, color: "#F7E018" },
+  express: { icon: Express, color: "#000000" },
+  github: { icon: Github, color: "#000000" },
+};
+
+export const ARTICLES = [
+  {
+    title: "Automating styles in SASS",
+    description:
+      "If sometimes you feel that you are repeating yourself in your styles, this article is for you. 💪",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:6975802903349350400/",
+    icon: "sass",
+  },
+  {
+    title: "How to implement a search function in React",
+    description: "Step by Step on how to create a search bar in a React App 💪",
+    link: "https://www.linkedin.com/pulse/implementar-un-buscador-en-reactjs-o-js-mat%25C3%25ADas-ferraro/?trackingId=sj8HTUvyS%2Bql4mc214S98Q%3D%3D",
+    icon: "react",
+  },
+
+  {
+    title: "Working with arrays in JS. Real life example. Unique values, mapping, reduce, and more",
+    description: "Don't be afraid to work with arrays, even in complex contexts. 💪",
+    link: "https://www.linkedin.com/pulse/agrupar-y-contar-arrays-en-javascript-mat%C3%ADas-ferraro/",
+    icon: "javascript",
   },
 ];
