@@ -35,7 +35,7 @@ export const NavbarMobile = () => {
       <div className={styles.ham}>
         <Hamburger
           color={theme === "light" ? "#000" : "#fff"}
-          onToggle={(t) => toggleDrawer()}
+          onToggle={() => toggleDrawer()}
           toggled={hamOpen}
           hideOutline
           rounded
@@ -43,7 +43,7 @@ export const NavbarMobile = () => {
         />
       </div>
       <div className={styles.drawer}>
-        <Drawer open={isOpen} onClose={toggleDrawer} direction='left'>
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>Hello World</div>
         </Drawer>
       </div>

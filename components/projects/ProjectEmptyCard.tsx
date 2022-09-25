@@ -1,8 +1,7 @@
-import { useRouter } from "next/router";
 import { FC } from "react";
 import { AddIcon } from "../icons";
+import { useNavigateTo } from "../../utils/navigator";
 import styles from "./projects.module.scss";
-import { navigateTo, useNavigateTo } from "../../utils/navigator";
 
 export const ProjectEmptyCard: FC = () => {
   const navigateTo = useNavigateTo();

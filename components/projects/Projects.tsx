@@ -7,22 +7,18 @@ export const Projects: FC = () => {
     <section className={styles.section}>
       <div className={styles.main}>
         <h2 className={styles.h2}>My Projects</h2>
-
         <section className={styles["projects-container"]}>
           <ProjectCard
-            imgSrc='https://media.giphy.com/media/juZhYgkBIrHNe19kn3/giphy.gif'
-            href='https://teslo-matata.herokuapp.com/'
-            title='Teslo Shop - Ecommerce'
+            imgSrc="https://media.giphy.com/media/juZhYgkBIrHNe19kn3/giphy.gif"
+            href="https://teslo-matata.herokuapp.com/"
           />
           <ProjectCard
-            imgSrc='https://media.giphy.com/media/tbywzWmAHMa8DJJfHV/giphy.gif'
-            href='https://www.inchequeable.com.ar/'
-            title='Inchequeable - Blog'
+            imgSrc="https://media.giphy.com/media/tbywzWmAHMa8DJJfHV/giphy.gif"
+            href="https://www.inchequeable.com.ar/"
           />
           <ProjectCard
-            imgSrc='https://media.giphy.com/media/PluZmEedwcclbGFnid/giphy.gif'
-            href='https://matiasferraro.netlify.app/'
-            title='Windows Clone - Personal Website'
+            imgSrc="https://media.giphy.com/media/PluZmEedwcclbGFnid/giphy.gif"
+            href="https://matiasferraro.netlify.app/"
           />
           <ProjectEmptyCard />
         </section>

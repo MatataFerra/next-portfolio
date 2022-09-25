@@ -2,7 +2,7 @@ import { FC, useRef } from "react";
 import { Timeline, Tween } from "react-gsap";
 import { Controller, Scene } from "react-scrollmagic";
 import styles from "./services.module.scss";
-import { ServiceForwardRef, ModalService } from ".";
+import { ServiceForwardRef } from ".";
 
 export const TweenText: FC = () => {
   const servicesRef = useRef<HTMLDivElement>(null);

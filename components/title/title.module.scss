@@ -3,6 +3,7 @@
 .div {
   display: grid;
   grid-template-rows: repeat(3, auto) 1fr;
+  padding: 5rem 0;
 
   @media screen and (max-width: $breakpoint-sm) {
     justify-items: center;

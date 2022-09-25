@@ -29,7 +29,7 @@ export const ImageMagnifier: FC<Props> = ({
     <div className={styles["image-magnifier"]}>
       <Image
         src={src}
-        alt='hand'
+        alt="hand"
         width={width ?? 200}
         height={height ?? 200}
         onMouseEnter={(e) => {
@@ -69,7 +69,8 @@ export const ImageMagnifier: FC<Props> = ({
           position: "absolute",
           top: `${y - magnifierHeight / 2}px`,
           width: `${magnifieWidth}px`,
-        }}></div>
+        }}
+      ></div>
     </div>
   );
 };
