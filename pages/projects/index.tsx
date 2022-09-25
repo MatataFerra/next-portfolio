@@ -1,16 +1,13 @@
 import { NextPage } from "next";
-import { useDevice } from "../../hooks";
 import { ProjectCardScreen, ResponsiveNavbar, HomeLayout, Title } from "../../components";
 import { PROJECTS_IMAGES_DESCRIPTION } from "../../utils";
 import styles from "./index.module.scss";
 
 const ProjectsPage: NextPage = () => {
-  const device = useDevice();
   return (
     <HomeLayout>
       <ResponsiveNavbar />
-
-      <Title title='Projects' />
+      <Title title="Projects" />
       {PROJECTS_IMAGES_DESCRIPTION.map((image, index) => {
         const alternate = index % 2 === 0;
         return (

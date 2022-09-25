@@ -21,6 +21,7 @@ export const HeroImage: FC<Props> = ({ src, alt, size, propotion }) => {
         width={width * imagePropotion}
         height={height * imagePropotion}
         alt={alt}
+        layout="intrinsic"
       />
     </div>
   );

@@ -24,6 +24,7 @@ export const ModalService: FC = () => {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
+    // eslint-disable-next-line no-console
     console.log("afterOpenModal");
   }
 
@@ -39,7 +40,8 @@ export const ModalService: FC = () => {
         onRequestClose={closeModal}
         shouldCloseOnEsc
         style={customStyles}
-        contentLabel='Example Modal'>
+        contentLabel="Example Modal"
+      >
         <p>TEXT</p>
       </Modal>
     </>

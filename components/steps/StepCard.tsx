@@ -1,6 +1,7 @@
 import { CSSProperties, FC } from "react";
 import Image from "next/image";
 import { GlassMagnifier } from "react-image-magnifiers";
+// eslint-disable-next-line no-unused-vars
 import { Canvas, HamIcon, ImageMagnifier } from ".";
 import styles from "./steps.module.scss";
 

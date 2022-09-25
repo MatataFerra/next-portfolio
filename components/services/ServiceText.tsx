@@ -1,4 +1,4 @@
-import { FC, forwardRef } from "react";
+import { forwardRef } from "react";
 import styles from "./services.module.scss";
 
 interface Props {

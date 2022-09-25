@@ -4,12 +4,14 @@ import styles from "./about.module.scss";
 interface Props {
   value: string | number;
   buttonClicked: boolean;
+  // eslint-disable-next-line no-unused-vars
   onClick: (e: any) => void;
 }
 
 interface PropsButtonGroup {
   numberOfButtons: number;
   buttonsState: { [key: string | number]: boolean };
+  // eslint-disable-next-line no-unused-vars
   onClick: (e: any) => void;
 }
 

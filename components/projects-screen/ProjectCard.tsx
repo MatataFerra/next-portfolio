@@ -1,7 +1,8 @@
-import { FC, useMemo, useState, useEffect } from "react";
+import { FC, useMemo } from "react";
 import Image from "next/image";
 import styles from "./projects.module.scss";
 import NextLink from "next/link";
+import { useDevice } from "../../hooks/useDevice";
 
 interface Props {
   imgSrc: string;
@@ -20,6 +21,7 @@ export const ProjectCardScreen: FC<Props> = ({
   alternate,
   linkToProject,
 }) => {
+  const device = useDevice();
   const boldText = useMemo(() => {
     const strongWords = text.match(/\*(.*?)\*/g);
 
@@ -44,15 +46,23 @@ export const ProjectCardScreen: FC<Props> = ({
 
   return (
     <div className={styles["image-container"]}>
-      <Image src={imgSrc} width={500} height={300} alt='Projects' className={styles.image} />
+      <Image
+        src={imgSrc}
+        width={500}
+        height={300}
+        alt="Projects"
+        className={styles.image}
+        layout="responsive"
+      />
       <article
-        className={`${alternate && styles["order-1"]} ${
+        className={`${alternate && device !== "mobile" && styles["order-1"]} ${
           linkToProject && styles["text-container"]
-        }`}>
+        }`}
+      >
         <p className={`${cssTextClass ?? ""}`}>{boldText}</p>
         {linkToProject && (
           <NextLink href={linkToProject} passHref>
-            <a target='_blank' rel='noopener noreferrer' className={styles["project-link"]}>
+            <a target="_blank" rel="noopener noreferrer" className={styles["project-link"]}>
               Visit Project
             </a>
           </NextLink>

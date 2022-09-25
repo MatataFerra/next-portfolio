@@ -7,10 +7,9 @@ import styles from "./projects.module.scss";
 interface Props {
   imgSrc: string;
   href: string;
-  title: string;
 }
 
-export const ProjectCard: FC<Props> = ({ imgSrc, href, title }) => {
+export const ProjectCard: FC<Props> = ({ imgSrc, href }) => {
   const imgRef = useRef<HTMLDivElement>(null);
   const phraseLink = useRef("Visit This Website");
   const parsePhrase = useMemo(() => phraseLink.current.split(""), []);
@@ -27,18 +26,19 @@ export const ProjectCard: FC<Props> = ({ imgSrc, href, title }) => {
   };
   return (
     <div className={styles.card}>
-      <Image src={imgSrc} alt='Project' layout='fill' priority />
+      <Image src={imgSrc} alt="Project" layout="fill" priority />
       <NextLink href={href} passHref>
         <a
-          target='_blank'
-          rel='noopener noreferrer'
+          target="_blank"
+          rel="noopener noreferrer"
           className={styles.cardLinks}
           onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}>
+          onMouseLeave={onMouseLeave}
+        >
           <div className={styles.cardLinkContainer} ref={imgRef}>
             <Image
-              src='/assets/images/projects/link-goto.svg'
-              alt='Go To Web'
+              src="/assets/images/projects/link-goto.svg"
+              alt="Go To Web"
               width={25}
               height={25}
               className={styles.image}
