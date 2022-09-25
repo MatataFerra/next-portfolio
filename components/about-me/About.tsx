@@ -10,10 +10,12 @@ export const About: FC = () => {
         <div className={styles.pic}>
           <Image
             className={styles.image}
-            src='https://picsum.photos/200/300'
+            src='/mock.jpg'
             alt='about-me'
             width={300}
             height={500}
+            // layout='fill'
+            priority
           />
         </div>
         <div className={styles.about}>

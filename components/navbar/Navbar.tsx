@@ -3,7 +3,6 @@ import NextLink from "next/link";
 import { EmailIcon, ChangeThemeIcon } from ".";
 import { Logos } from "../logos";
 import styles from "./navbar.module.scss";
-import { useToggleTheme } from "../../hooks";
 import { useNavigateTo } from "../../utils";
 
 export const Navbar: FC = () => {

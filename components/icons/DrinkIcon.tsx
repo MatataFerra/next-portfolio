@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { PropsIcon } from ".";
+import { PropsIcon } from "../about-me";
 
 export const DrinkIcon: FC<PropsIcon> = (props) => (
   <svg

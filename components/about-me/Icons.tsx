@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./about.module.scss";
-import { DrinkIcon, DiplomaIcon, TravelIcon, ChildrenIcon } from ".";
+import { DrinkIcon, DiplomaIcon, TravelIcon, ChildrenIcon } from "../icons";
 
 const ICON_PROPS = {
   width: 24,

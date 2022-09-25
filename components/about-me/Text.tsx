@@ -1,21 +1,21 @@
 import { FC } from "react";
-import styles from "./about.module.scss";
 import NextLink from "next/link";
 import { useText } from "../../hooks";
-import { BioProps } from "./interfaces";
+import { BioProps } from "../../interface";
+import styles from "./about.module.scss";
 
-export const Longest: FC<BioProps> = ({ text, limit }) => {
+export const Text: FC<BioProps> = ({ text, limit, cssClass, isLast }) => {
   const textToRender = useText(text, limit);
   return (
-    <section className={`${styles.longest} ${styles.brief}`}>
-      <p className={styles.p}>
-        {textToRender}
+    <section className={`${cssClass ? styles[cssClass] : ""} ${styles.brief}`}>
+      <p className={styles.p}>{textToRender}</p>
+      {isLast && (
         <strong className={styles.strong}>
           <NextLink href='mailto:matias.agf@gmail.com'>
             Contact me at: matias.agf@gmail.com
           </NextLink>
         </strong>
-      </p>
+      )}
     </section>
   );
 };

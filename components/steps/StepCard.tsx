@@ -19,7 +19,8 @@ export const StepCardContainer: FC<Props> = ({ title, cssClass, children, ...res
       className={`${styles.card} ${
         !!cssClass && cssClass?.trim().length > 0 ? styles[cssClass] : ""
       }`}
-      {...rest}>
+      {...rest}
+    >
       <p className={styles.p}>{title}</p>
       {children}
     </div>
@@ -44,7 +45,7 @@ export const StepCardDrawIdeas: FC = () => {
         </span>
       </div>
       <div className={styles.image}>
-        <Image src={pngImage} alt='hand' width={50} height={50} />
+        <Image src={pngImage} alt="hand" width={50} height={50} />
       </div>
     </>
   );
@@ -93,12 +94,13 @@ export const StepCardCoding: FC = () => {
 export const StepCardReview: FC = () => {
   return (
     <>
-      <ImageMagnifier src='/assets/images/steps/mockup-2.svg' height='200' width='300' />
-      {/* <GlassMagnifier
-        imageSrc='/assets/images/steps/mockup-2.svg'
-        imageAlt='mockup'
+      {/* <ImageMagnifier src='/assets/images/steps/mockup-2.svg' height='200' width='300'  /> */}
+
+      <GlassMagnifier
+        imageSrc="/assets/images/steps/mockup-2.svg"
+        imageAlt="mockup"
         className={styles["image-magnifier"]}
-      /> */}
+      />
     </>
   );
 };
