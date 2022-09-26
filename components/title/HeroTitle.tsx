@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from "react";
 import styles from "./title.module.scss";
-import { Name } from ".";
+import { LetsTalk, Name } from ".";
 import { gsap } from "gsap";
 
 export const HeroTitle: FC = () => {
@@ -27,6 +27,7 @@ export const HeroTitle: FC = () => {
         Desarrollador Frontend viviendo en Argentina (Buenos Aires). Con experiencia desarrollando
         aplicaciones web complejas con las últimas tecnologías
       </p>
+      <LetsTalk />
     </div>
   );
 };
