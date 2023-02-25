@@ -2,10 +2,9 @@ import { useState } from "react";
 import Drawer from "react-modern-drawer";
 import Hamburger from "hamburger-react";
 import { DarkLogo, LightLogo } from "../../logos";
-import { useNavigateTo, useToggleTheme } from "../../../hooks";
+import { useToggleTheme } from "../../../hooks";
 import styles from "./navbarmobile.module.scss";
 import { DarkModeIcon, LightModeIcon } from "../../navbar";
-import { GitHubIcon, LinkedinIcon } from "../../icons";
 import "react-modern-drawer/dist/index.css";
 
 export const NavbarMobile = () => {
@@ -13,7 +12,6 @@ export const NavbarMobile = () => {
   const [hamOpen, setHamOpen] = useState(false);
   const [changeTheme, setChangeTheme] = useState(false);
   const { theme, toggleTheme } = useToggleTheme();
-  const navigateTo = useNavigateTo();
 
   const onChangeTheme = () => {
     setChangeTheme((prev) => !prev);
@@ -46,19 +44,7 @@ export const NavbarMobile = () => {
       </div>
       <div className={styles.drawer}>
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
-          <section className={styles["list-container"]}>
-            <nav>
-              <ul className={styles.ul}>
-                <li onClick={() => navigateTo("/")}>Home</li>
-                <li onClick={() => navigateTo("/projects")}>Projects</li>
-                <li onClick={() => navigateTo("/articles")}>Articles</li>
-              </ul>
-            </nav>
-            <div className={styles.icons}>
-              <GitHubIcon />
-              <LinkedinIcon />
-            </div>
-          </section>
+          <div>Hello World</div>
         </Drawer>
       </div>
     </div>

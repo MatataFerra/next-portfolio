@@ -1,11 +1,27 @@
-import { Nextdotjs } from "@icons-pack/react-simple-icons";
+import {
+  Nextdotjs,
+  ReactJs,
+  Redux,
+  Sass,
+  Nodedotjs,
+  Mongodb,
+  Typescript,
+  Express,
+  Github,
+} from "@icons-pack/react-simple-icons";
 
 export interface IconsProps {
-  [key: string]: Icon;
-}
-
-export interface Icon {
-  icon: typeof Nextdotjs;
-  color: string;
-  dark?: string;
+  [key: string]: {
+    icon:
+      | typeof Nextdotjs
+      | typeof ReactJs
+      | typeof Redux
+      | typeof Sass
+      | typeof Nodedotjs
+      | typeof Mongodb
+      | typeof Typescript
+      | typeof Express
+      | typeof Github;
+    color: string;
+  };
 }
