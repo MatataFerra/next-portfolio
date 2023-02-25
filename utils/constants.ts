@@ -49,7 +49,7 @@ export const PROJECTS_IMAGES_DESCRIPTION = [
     src: "https://res.cloudinary.com/docq8rbdu/image/upload/v1662945824/portfolio-next/betszv7uyswhforzu1iz.png",
     text: "E-Commerce site build with NextJS and *TypeScript*, it has Admin site with a dashboard. The app also has many features like: Store Locator with maps, Stock control, Cart, Checkout, PayPal payment, Favourites Products, and more.",
     title: "E-Commerce Site",
-    link: "https://teslo-matata.herokuapp.com/",
+    link: "https://teslo.vercel.app/",
   },
 
   {
